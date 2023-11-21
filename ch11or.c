@@ -9,13 +9,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
 
 
 
 
 /* defines */
-
-
 
 
 
@@ -28,13 +28,15 @@
 
 /* function declarations */
 
-
+bool isCorrectLen(char *s, int len);
 
 
 
 
 
 int main(int argc, char *argv[]) {
+
+    int len = 2;
 
 /* are there two arguments? */
 
@@ -45,6 +47,13 @@ int main(int argc, char *argv[]) {
 
 
 /* does each argument have two characters? */
+
+    if(isCorrectLen(argv[1], len)){
+        printf("string length is correct.\n");
+    }else{
+        printf("string length is incorrect.\n");
+    }
+
 
 
 
@@ -78,3 +87,17 @@ int main(int argc, char *argv[]) {
 }
 
 /* function definitions */
+
+bool isCorrectLen(char *s, int len) {
+    bool result;
+
+    if(strlen(s) != 2){
+        result = false;
+    }else{
+        result = true;
+    }
+
+
+
+    return(result);
+}
