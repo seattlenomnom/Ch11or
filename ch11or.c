@@ -7,6 +7,8 @@
 
 /* include */
 
+#include <stdio.h>
+#include <stdlib.h>
 
 
 
@@ -36,7 +38,10 @@ int main(int argc, char *argv[]) {
 
 /* are there two arguments? */
 
-
+    if(argc != 3) {
+        printf("ch11or usage: ch11or arg1 arg2.\n");
+        exit(0);
+   }
 
 
 /* does each argument have two characters? */

@@ -6,3 +6,5 @@ material found in, Kochan, Stephen, "Programming in C 4 ed."
 ## Log
 Tuesday, November 21 2023
 create project folder locally and on github. Initial push.
+
+create input and input checking.
