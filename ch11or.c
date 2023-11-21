@@ -34,14 +34,33 @@
 
 int main(int argc, char *argv[]) {
 
+/* are there two arguments? */
+
+
+
+
+/* does each argument have two characters? */
+
+
+
+/* is each character a hex character? */
+
+
+
+/* turn the first hex number into an unsigned integer */
+
+
+
+
+
+/* turn the second hex number into an unsigned integer */
 
 
 
 
 
 
-
-
+/* take the inclusive or of the two numbers and print the result as hex */
 
 
 
