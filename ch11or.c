@@ -40,9 +40,8 @@ bool isValidHexNum(char *s);
 int main(int argc, char *argv[]) {
 
     int len = 2, aIndex;
-/*
-    char hexchar;
-*/
+
+
 /* are there two arguments? */
 
     if(argc != 3) {
