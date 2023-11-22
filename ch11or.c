@@ -11,6 +11,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <ctype.h>
+
 
 
 
@@ -29,6 +31,7 @@
 /* function declarations */
 
 bool isCorrectLen(char *s, int len);
+bool isValidHexNum(char *s);
 
 
 
@@ -36,8 +39,10 @@ bool isCorrectLen(char *s, int len);
 
 int main(int argc, char *argv[]) {
 
-    int len = 2;
-
+    int len = 2, aIndex;
+/*
+    char hexchar;
+*/
 /* are there two arguments? */
 
     if(argc != 3) {
@@ -48,18 +53,24 @@ int main(int argc, char *argv[]) {
 
 /* does each argument have two characters? */
 
-    if(isCorrectLen(argv[1], len)){
-        printf("string length is correct.\n");
-    }else{
-        printf("string length is incorrect.\n");
+    for(aIndex = 1; aIndex < 3; ++aIndex){
+        if(!isCorrectLen(argv[aIndex], len)){
+            printf("string length is not correct\n");
+            exit(0);
+        }
     }
 
 
 
 
-/* is each character a hex character? */
+/* is each string a valid hex number? */
 
-
+    for(aIndex = 1; aIndex < 3; ++aIndex){
+        if(!isValidHexNum(argv[aIndex])){
+            printf("usage: %s is not a valid hex number.\n", argv[aIndex]);
+            exit(0);
+        }
+    }
 
 /* turn the first hex number into an unsigned integer */
 
@@ -101,3 +112,34 @@ bool isCorrectLen(char *s, int len) {
 
     return(result);
 }
+
+
+
+
+bool isValidHexNum(char *s){
+    bool result;
+
+    int size;
+
+    size = 0;
+    result = true;
+    for(size = 0; (size < 2) && (result == true); ++size){
+        if(isxdigit(s[size])){
+            result = true;
+        }else{
+            result = false;
+        }
+    }
+
+
+
+    return(result);
+}
+
+
+
+
+
+
+
+
