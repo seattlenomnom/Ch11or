@@ -3,6 +3,11 @@
  * Input: two 8 bit hex numbers, i.e. a3 c5
  * Output: the bitwise inclusive or of these two 8 bit numbers.
  *
+ *
+ * Questions:
+ * 1. strtoul, can I correctly cram it into a byte? Don't know.
+ *
+ * finished 11/21/2023
 */
 
 /* include */
@@ -40,7 +45,8 @@ bool isValidHexNum(char *s);
 int main(int argc, char *argv[]) {
 
     int len = 2, aIndex;
-
+    unsigned int num1, num2;
+    char *string;
 
 /* are there two arguments? */
 
@@ -73,19 +79,22 @@ int main(int argc, char *argv[]) {
 
 /* turn the first hex number into an unsigned integer */
 
-
+    num1 = strtoul(argv[1], &string, 16);
 
 
 
 /* turn the second hex number into an unsigned integer */
 
-
+    num2 = strtoul(argv[2], &string, 16);
 
 
 
 
 /* take the inclusive or of the two numbers and print the result as hex */
 
+    printf("%x\n", num1);
+    printf("%x\n", num2);
+    printf("%x\n", (num1 | num2));
 
 
 
